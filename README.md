@@ -66,9 +66,7 @@ Build the Project:
 
 The project uses Cargo for dependency management. Run the following command to compile the project:
 
-bash
-Copy
-Edit
+
 cargo build --release
 This command downloads all dependencies (as specified in Cargo.toml) and builds the project.
 
@@ -93,18 +91,14 @@ Get Your Chat ID: Use @getidsbot or inspect messages sent by your bot.
 
 Set Environment Variables:
 
-bash
-Copy
-Edit
+
 export TELEGRAM_BOT_TOKEN="your_bot_token"
 export TELEGRAM_CHAT_ID="your_chat_id"
 Usage
 Live Trading Mode
 To run the bot in live trading mode (fetching real-time data from CoinGecko):
 
-bash
-Copy
-Edit
+
 cargo run --release -- --sma-short 7 --sma-long 21 --stop-loss 3.5
 The bot polls the CoinGecko API every 60 seconds.
 It computes SMAs and executes trades based on the configured thresholds.
@@ -114,18 +108,14 @@ To simulate trading with historical data:
 
 Prepare a CSV file (default name: historical_prices.csv) with the following format:
 
-csv
-Copy
-Edit
+
 timestamp,price
 2023-01-01T00:00:00Z,42000.0
 2023-01-01T01:00:00Z,42250.0
 2023-01-01T02:00:00Z,41900.0
 Run the backtest:
 
-bash
-Copy
-Edit
+
 cargo run --release -- --backtest --historical-data historical_prices.csv --sma-short 10 --sma-long 30
 The bot reads historical data from the CSV, simulates trades, and logs the final profit.
 Design Decisions
@@ -137,9 +127,7 @@ Error Handling and Logging: Uses the log and env_logger libraries for detailed r
 Asynchronous Operations: Powered by tokio to manage I/O efficiently (polling API, handling delays, etc.).
 Configuration with Clap: Ensures a flexible, user-friendly command-line interface with built-in help documentation.
 Project Structure
-bash
-Copy
-Edit
+
 crypto-trader/
 ├── Cargo.toml         # Project dependencies and metadata
 ├── README.md          # This file
@@ -155,9 +143,7 @@ Linting: Run cargo clippy for hints and potential code improvements.
 Debug Logs: Set the environment variable RUST_LOG=debug to see detailed logging output.
 Example:
 
-bash
-Copy
-Edit
+
 RUST_LOG=debug cargo run
 Submission Guidelines
 Ensure Your Repository is Complete:
@@ -167,31 +153,21 @@ A complete and detailed README.md is present.
 Push Your Code to GitHub:
 
 Initialize Git (if not already):
-bash
-Copy
-Edit
+
 git init
 Add All Files:
-bash
-Copy
-Edit
+
 git add .
 Commit Your Changes:
-bash
-Copy
-Edit
+
 git commit -m "Initial commit: Crypto trading bot implementation"
 Add Remote Repository:
-bash
-Copy
-Edit
+
 git remote add origin 
 Push to GitHub: https://github.com/harshu927/Crypto-Trader
-bash
-Copy
-Edit
+
 git push -u origin main
 Submit the GitHub Repository Link as required by your assessment instructions.
-[00:31, 23/3/2025] Harsh Choubey: ---
+ Harsh Choubey: ---
 
 This README provides all the details needed to run, test, and submit your Rust-based crypto trading bot. It covers every aspect from installation, configuration, execution, design reasoning, and submission—ideal for a beginner to follow along. Enjoy building and best of luck with your assessment!
